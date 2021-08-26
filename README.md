@@ -95,7 +95,7 @@ Os demais **pushes** não precisam dessa informação
   
 ### Clonar um repositório remoto já existente
 
-	git clone git@github.com:leocomelli/curso-git.git
+	git clone git@github.com:MatheusLPolidoro/curso-git.git
 	
 ### Tags
 
