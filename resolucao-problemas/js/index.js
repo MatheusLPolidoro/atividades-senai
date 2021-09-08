@@ -71,14 +71,14 @@ function formCriarEvento() {
     var mes = String(data.getMonth() + 1).padStart(2, '0');
     var ano = data.getFullYear();
     minDate = ano + '-' + mes + '-' + dia;
-    element.innerHTML = '<div><label>Data do Evento </label><input id="dataEvento" type="date" name="dataEvento" min="'+ minDate + '" max="2025-04-30" required></div><div><label>Nome do Evento </label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div><br><label>Descrição </label><textarea row="6" style="width: 25em" id="descricao""></textarea></div><div><button type="submit">Concluído</button></div>' 
+    element.innerHTML = '<div class="campo"><label><strong>Data do Evento</strong></label><input id="dataEvento" type="date" name="dataEvento" min="'+ minDate + '" max="2025-04-30" required></div><div class="campo"><label><strong>Nome do Evento</strong></label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div class="campo"><br><label><strong>Descrição</strong></label><textarea row="6" style="width: 25em" id="descricao""></textarea></div><div><button type="submit" class="botao">Concluído</button></div>' 
 
 }
 
 
 function formEntrarEvento() {
     var element = document.getElementById('escolha');
-    element.innerHTML = '<div><label>Nome do Evento </label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div><br><button type="submit">Concluído</button></div>' 
+    element.innerHTML = '<div class="campo"><label><strong>Nome do Evento</strong></label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div><br><button type="submit" class="botao">Concluído</button></div>' 
 }
 
 function submeter() {

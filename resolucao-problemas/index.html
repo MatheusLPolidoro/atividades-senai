@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <!-- Metadados -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+
+        <!-- Título da página (aparece no topo da aba) -->
         <title>Sistema de cadastro</title>
     </head>
     <body>
+
+        <!-- Cabeçalho com título e subtítulo -->
         <div>
             <h1 id="titulo">Cadastro de Eventos</h1>
+            <p id="subtitulo">Agende um evento ou cadastre-se em algum evento agendado</p>
+            <br>
         </div>
 
-        <button onclick="principal()" type="button" class="principal">Executar!</button>
-
+        <!-- Início do formulário -->
         <form onsubmit="submeter()">
+
             <fieldset class="grupo">
-                <div>
-                    <label for="nome">Nome</label>
-                    <input type="text" nome="nome" id="nome" maxlength="15" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required>
+                <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
+                <div class="campo">
+                    <label for="nome"><strong>Nome</strong></label>
+                    <input type="text" name="nome" id="nome" maxlength="15" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required>
                 </div>
-
-                <div>
-                    <label for="sobrenome">Sobre nome</label>
-                    <input type="text" nome="sobrenome" id="sobrenome" maxlength="50" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required>
-                </div>
-
-                <div>
-                    <label for="dataNasc">Data de Nascimento</label>
-                    <input type="date" name="dataNasc" id="dataNasc" required>
+                
+                <!-- Campo do sobrenome com legenda "sobrenome" e css de classe "campo" -->
+                <div class="campo">
+                    <label for="sobrenome"><strong>Sobre nome</strong></label>
+                    <input type="text" name="sobrenome" id="sobrenome" maxlength="50" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required>
                 </div>
             </fieldset class="grupo">
 
+            <!-- Campo de data de nascimento com legenda "dataNasc" e css de clase "campo" -->
             <div class="campo">
-                <button onclick="formCriarEvento()" type="button" class="criarEvento">
+                <label for="dataNasc"><strong>Data de Nascimento</strong></label>
+                <input type="date" name="dataNasc" id="dataNasc" required>
+                <br>
+            </div>
+
+            <!-- Botões com legenda "botao" e css de clase "campo" -->
+            <div class="campo">
+                <button onclick="formCriarEvento()" type="button" class="botao" id="botao">
                     Criar Evento
                     <script src="js/index.js"></script>
                 </button>
 
-                <button onclick="formEntrarEvento()" type="button" class="entrarEvento">
+                <button onclick="formEntrarEvento()" type="button" class="botao" id="botao">
                     Ingressar
                     <script src="js/index.js"></script>
                 </button>
             </div>
 
+            <!-- Divisão para inlcuir restante do formulario dependendo da opção de botão selecionado -->
             <div class="campo" id="escolha"></div>
+
         </form>
+
     </body>
+
 </html>
