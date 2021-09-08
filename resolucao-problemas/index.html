@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sistema de cadastro</title>
+    </head>
+    <body>
+        <div>
+            <h1 id="titulo">Cadastro de Eventos</h1>
+        </div>
+        <button onclick="principal()" type="button" class="principal">Executar!</button>
+        <form>
+            <fieldset class="grupo">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" nome="nome" id="nome" maxlength="15" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required>
+                </div>
+
+                <div>
+                    <label for="sobrenome">Sobre nome</label>
+                    <input type="text" nome="sobrenome" id="sobrenome" maxlength="50" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required>
+                </div>
+
+                <div>
+                    <label for="dataNasc">Data de Nascimento</label>
+                    <input type="date" name="dataNasc" id="dataNasc" required>
+                </div>
+            </fieldset class="grupo">
+
+            <div class="campo">
+                <button onclick="formCriarEvento()" type="button" class="criarEvento">
+                    Criar Evento
+                    <script src="js/index.js"></script>
+                </button>
+
+                <button onclick="formEntrarEvento()" type="button" class="entrarEvento">
+                    Ingressar
+                    <script src="js/index.js"></script>
+                </button>
+            </div>
+
+            <div class = "campo" id="escolha"></div>
+        </form>
+    </body>
+</html>
