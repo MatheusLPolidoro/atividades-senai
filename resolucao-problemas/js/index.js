@@ -4,10 +4,11 @@ function principal() {
     
     var data = new Date();
 
-    anoAtual = data.getFullYear(); //pegar do computador
+    var anoAtual = data.getFullYear();
     var dia = String(data.getDate()).padStart(2, '0');
     var mes = String(data.getMonth() + 1).padStart(2, '0');
-    dataAtual = dia + mes + anoAtual; // pegar do computador
+    var dataAtual = dia + mes + anoAtual;
+
     qtdPart = 0; // banco de dados
 
     // entrada de dados
@@ -63,18 +64,53 @@ function validarEvento(nomeEvento) {
     return true;
 }
 
-function formCriarEvento () {
+function formCriarEvento() {
     var element = document.getElementById('escolha');
     var data = new Date();
     var dia = String(data.getDate()).padStart(2, '0');
     var mes = String(data.getMonth() + 1).padStart(2, '0');
     var ano = data.getFullYear();
     minDate = ano + '-' + mes + '-' + dia;
-    element.innerHTML = '<div><label>Data do Evento </label><input id="dataEvento" type="date" name="dataEvento" min="'+ minDate + '" max="2025-04-30" required></div><div><label>Nome do Evento </label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div><br><label>Descrição </label><textarea row="6" style="width: 25em" id="descricao""></textarea></div><div><button type="submit">Concluído </button></div>' 
+    element.innerHTML = '<div><label>Data do Evento </label><input id="dataEvento" type="date" name="dataEvento" min="'+ minDate + '" max="2025-04-30" required></div><div><label>Nome do Evento </label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div><br><label>Descrição </label><textarea row="6" style="width: 25em" id="descricao""></textarea></div><div><button type="submit">Concluído</button></div>' 
+
 }
 
 
-function formEntrarEvento () {
+function formEntrarEvento() {
     var element = document.getElementById('escolha');
-    element.innerHTML = '<div><label>Nome do Evento </label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div><br><button type="submit">Concluído </button></div>' 
+    element.innerHTML = '<div><label>Nome do Evento </label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div><br><button type="submit">Concluído</button></div>' 
+}
+
+function submeter() {
+    var data = new Date();
+    var dataN = dataNasc.value.split('-');
+
+    var anoAtual = data.getFullYear();
+    var mes = data.getMonth() + 1;
+    var dia = data.getDate();
+
+    var anoN = dataN[0];
+    var mesN = dataN[1];
+    var diaN = dataN[2];
+
+    var idade = anoAtual - anoN;
+
+    //Se mes atual for menor que o mes do nascimento, nao fez aniversario ainda;  
+    if(mes < mesN){
+        idade--; 
+    } else {
+        //Se estiver no mes do nascimento, verificar o dia
+        if(mes == mesN){ 
+            if(dia < diaN ){ 
+                //Se a data atual for menor que o dia de nascimento ele ainda nao fez aniversario
+                idade--; 
+            }
+        }
+    } 
+
+    if (idade > 17) {
+        window.alert(nome.value + " cadastro realizado com sucesso!");
+    }else{
+        window.alert(nome.value + " não foi possivel completar o cadastro. Idade mínima de 18 anos.")
+    };
 }
