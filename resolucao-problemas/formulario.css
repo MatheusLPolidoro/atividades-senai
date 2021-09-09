@@ -34,7 +34,7 @@ body{
 }
 
 /* Elementos de tags <input>, <textarea> e <button> */
-input, textarea, button{
+input, textarea, select, button{
     font-family: sans-serif;
     font-size: 1em;
     color: #59429d;
@@ -76,7 +76,7 @@ fildset.grupo.campo{
 }
 
 /* Elementos de classe "campo" das tags <input> e <textarea>*/
-.campo input[type="text"], .campo input[type="date"], .campo textarea{
+.campo input[type="text"], .campo input[type="date"], .campo textarea, .campo select{
     padding: 0.2em;
     border: 1px solid #59429d;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
@@ -84,7 +84,7 @@ fildset.grupo.campo{
 }
 
 /* Elemento de classe "campo" com tag <input> e <textarea> tocas com estado da pseudoclasse "focus"*/
-.campo input:focus, .campo textarea:focus{
+.campo input:focus, .campo textarea:focus, .campo select:focus{
     background: #E0E0F8;
 }
 

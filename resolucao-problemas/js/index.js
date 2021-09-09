@@ -78,7 +78,7 @@ function formCriarEvento() {
 
 function formEntrarEvento() {
     var element = document.getElementById('escolha');
-    element.innerHTML = '<div class="campo"><label><strong>Nome do Evento</strong></label><input type="text" name="nomeEvento" id="nomeEvento" maxlength="20" required></div><div><br><button type="submit" class="botao">Concluído</button></div>' 
+    element.innerHTML = '<div class="campo"><label><strong>Nome do Evento</strong></label><select type="text" name="nomeEvento" id="nomeEvento"required>  <option value="valor1">Versionamento</option><option value="valor2">Internet of things</option><option value="valor3">Big Data</option></select></div><div><br><button type="submit" class="botao">Concluído</button></div>' 
 }
 
 function submeter() {
