@@ -2,7 +2,7 @@
 <h2> Desenvolvido durante o curso de front-end-senai </h2>
 <h3>UC7 - Versionamento</h3>
 
-<a href="https://atividades-senai-git.vercel.app/" target="_blank" rel="external"><em><strong>click aqui</strong></em></a> para ser direcionao ao site implementado
+<a href="https://atividades-senai-git.vercel.app/" target="_blank" rel="external"><em><strong>clique aqui</strong></em></a> para ser direcionao ao site implementado
 ## Configuração
 
 ##### Setar usuário
