@@ -1,5 +1,5 @@
-# Atividade 2 Lógica de programação
-## Sistema de Cadastro de Eventos
+# Atividade 2 Lógica de programação 
+## Sistema de Cadastro de Eventos <img src="https://user-images.githubusercontent.com/89528428/132959400-48182a40-42c9-4ec8-a42f-264a42272123.png" width="50">
 
  O objetivo foi implementar o fluxograma criado na atividade 1 atráves da linguagem JavaScript.
 
