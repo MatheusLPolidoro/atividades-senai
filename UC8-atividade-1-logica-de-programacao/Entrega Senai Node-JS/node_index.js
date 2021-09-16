@@ -26,7 +26,7 @@ idade = anoAtual - anoNasc;
 
 if (idade > 17) {
     // entrada de dados
-    cadastro = rl.question(usuario + " deseja cadastrar um evento novo ou entrar em um existente? ['N' para NOVO e 'E' para EXISTENTE]: ");
+    cadastro = rl.question(usuario + " deseja cadastrar um evento novo ou entrar em um existente?\n ['N' para NOVO e 'E' para EXISTENTE]: ");
     cadastro = cadastro.toUpperCase();
     if (cadastro == "N") {
         dataEvento = rl.question('Digite a data do evento que deseja programar: ');
@@ -68,6 +68,7 @@ if (idade > 17) {
     console.log(usuario + ' seu cadastro não é permitido devido idade mínima de 18 anos.');
 }
 
+rl.question(''); // para manter a mensagem final ao usuario até ser presionado a tecla 'enter'
 
 function listaEvento(nomeEvento) {
 //implementar listagem de eventos e participantes
