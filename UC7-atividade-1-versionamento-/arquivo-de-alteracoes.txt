@@ -1,0 +1,3 @@
+
+Fazendo alterações: incluindo uma linha nova no documento de texto
+incluindo uma nova linha diretamente pelo terminal de comando do git...
