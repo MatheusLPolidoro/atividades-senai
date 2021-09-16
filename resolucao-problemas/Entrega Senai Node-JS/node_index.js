@@ -34,7 +34,7 @@ if (idade > 17) {
         if (dataEvento > dataAtual) {
             nomeEvento = rl.question('Digite um nome para seu evento: ');
             // saída de dados
-            console.log(usuario + ' evento ' + nomeEvento + ' cadastrado com sucesso!');
+            console.log(usuario + ', o evento ' + nomeEvento + ' foi cadastrado com sucesso!');
         } else {
             // saída de dados
             console.log('Esse evento não será permitido devido data inválida.');
