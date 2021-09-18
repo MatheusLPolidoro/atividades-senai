@@ -17,13 +17,13 @@ dataAtual = dia + mes + anoAtual;
 var qtdParticipantes = 0; // banco de dados
 
 // entrada de dados
-usuario = window.prompt('Bem vindo! informe seu nome: ');
-anoNasc = window.prompt('Digite o ano em que nasceu: ');
+usuario = window.prompt('Bem vindo! informe seu nome: ')
+anoNasc = window.prompt('Digite o ano em que nasceu: ').split("/")
 
 //processamento
-idade = anoAtual - anoNasc;
+idade = anoAtual - anoNasc[2];
 
-if (idade > 17) {
+if (idade > 18) {
     // entrada de dados
     cadastro = window.prompt(usuario + " deseja cadastrar um evento novo ou entrar em um existente?\n ['N' para NOVO e 'E' para EXISTENTE]: ");
     cadastro = cadastro.toUpperCase();
@@ -48,7 +48,7 @@ if (idade > 17) {
                 if (qtdParticipantes < 100) {
                     // saída de dados
                     window.alert(usuario + ' seu cadastro no evento ' + nomeEvento + ' foi realizado com sucesso!');
-                    qtdParticipantes = qtdParticipantes + 1;
+                    qtdParticipantes ++;
                 } else {
                     // saída de dados
                     window.alert('O evento ' + nomeEvento + ' Já está lotado, seu ingresso não será possível.');
