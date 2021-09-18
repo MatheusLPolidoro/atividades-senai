@@ -1,29 +1,35 @@
 // Autor: Matheus Latancio Polidoro | data: 16/09/2021 | Senai Front-end
 
-
 // definição de variáveis
-var usuario, nomeEvento, cadastro;
-var anoNasc, anoAtual, dataAtual, dataEvento, idade;
+var usuario, nomeEvento, cadastro, dataNasc, dataAtual, dataEvento, idade;
 
 // pegar a data atual do sistema
-var data = new Date(),
-
-anoAtual = data.getFullYear(),
-dia = String(data.getDate()).padStart(2, '0'),
-mes = String(data.getMonth() + 1).padStart(2, '0'),
-
-dataAtual = dia + mes + anoAtual;
-
-var qtdParticipantes = 0; // banco de dados
+let data = new Date()
+dataAtual = ((data.getMonth() + 1) + '-' + data.getDate() + '-' + data.getFullYear()).split("-")
 
 // entrada de dados
 usuario = window.prompt('Bem vindo! informe seu nome: ')
-anoNasc = window.prompt('Digite o ano em que nasceu: ').split("/")
 
-//processamento
-idade = anoAtual - anoNasc[2];
+dataNasc = window.prompt('Digite sua data de nascimento: ').replaceAll("/", "")
 
-if (idade > 18) {
+dataNasc = (dataNasc.substring(2, 4) + '-' + dataNasc.substring(0, 2) + '-' + dataNasc.substring(4, 8)).split("-")
+
+//processamento da data 
+idade = dataAtual[2] - dataNasc[2];
+    //Se mes atual for menor que o mes do nascimento, nao fez aniversario ainda;  
+    if(parseInt(dataAtual[0]) < parseInt(dataNasc[0])){
+        idade--; 
+    } else {
+        //Se estiver no mes do nascimento, verificar o dia
+        if(parseInt(dataAtual[0]) === parseInt(dataNasc[0])){ 
+            if(parseInt(dataAtual[1]) < parseInt(dataNasc[1])){ 
+                //Se a data atual for menor que o dia de nascimento ele ainda nao fez aniversario
+                idade--; 
+            }
+        }
+    } 
+
+if (idade >= 18) {
     // entrada de dados
     cadastro = window.prompt(usuario + " deseja cadastrar um evento novo ou entrar em um existente?\n ['N' para NOVO e 'E' para EXISTENTE]: ");
     cadastro = cadastro.toUpperCase();
@@ -45,6 +51,9 @@ if (idade > 18) {
                 // saída de dados
                 window.alert('Lista de participantes e palestrantes do evento ' + nomeEvento);
                 listaEvento(nomeEvento);
+
+                var qtdParticipantes = 0; // banco de dados
+
                 if (qtdParticipantes < 100) {
                     // saída de dados
                     window.alert(usuario + ' seu cadastro no evento ' + nomeEvento + ' foi realizado com sucesso!');
