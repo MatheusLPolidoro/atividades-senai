@@ -34,9 +34,12 @@ if (idade >= 18) {
     cadastro = window.prompt(usuario + " deseja cadastrar um evento novo ou entrar em um existente?\n ['N' para NOVO e 'E' para EXISTENTE]: ");
     cadastro = cadastro.toUpperCase();
     if (cadastro == "N") {
-        dataEvento = window.prompt('Digite a data do evento que deseja programar: ');
-        dataEvento = dataEvento.replace("/","");
-        if (dataEvento > dataAtual) {
+        dataEvento = window.prompt('Digite a data do evento que deseja programar: ').split("/");
+        dataEvento = new Date(dataEvento[2], dataEvento[1], dataEvento[0]);
+        dataAtual = new Date(dataAtual[2], dataAtual[0], dataAtual[1]);
+        alert(dataEvento)
+        alert(dataAtual)
+        if (dataEvento.getTime() > dataAtual.getTime()) {
             nomeEvento = window.prompt('Digite um nome para seu evento: ');
             // saída de dados
             window.alert(usuario + ', o evento ' + nomeEvento + ' foi cadastrado com sucesso!');
